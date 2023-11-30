@@ -38,11 +38,7 @@
       <version>5.7.1</version> <!-- You can use a newer version if available -->
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.1</version>
-    </dependency>
+    
     <dependency>
       <groupId>org.jacoco</groupId>
       <artifactId>jacoco-maven-plugin</artifactId>
@@ -50,15 +46,7 @@
     </dependency>
   </dependencies>
   
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>cobertura-maven-plugin</artifactId>
-        <version>2.0</version>
-      </plugin>
-    </plugins>
-  </reporting> 
+
  
   <build>
     <plugins>
