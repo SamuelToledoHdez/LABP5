@@ -23,6 +23,21 @@
     <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
     <sonar.language>java</sonar.language>
 </properties>
+  <dependencies>
+    <!-- Other dependencies -->
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>5.7.1</version> <!-- You can use a newer version if available -->
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>5.7.1</version> <!-- You can use a newer version if available -->
+        <scope>test</scope>
+    </dependency>
+</dependencies>
   
    <reporting>
          <plugins>
