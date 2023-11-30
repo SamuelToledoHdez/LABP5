@@ -15,6 +15,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <sonar.organization>samueltoledohdez</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
 
@@ -49,30 +50,38 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                   <version>3.0.0-M5</version>
             </plugin>
+                 <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>7.4.4</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>aggregate</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+         <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jdepend-maven-plugin</artifactId>
+                <version>2.0</version>
+            </plugin>
              <plugin>
-      <groupId>org.jacoco</groupId>
-     <artifactId>jacoco-maven-plugin</artifactId>
-      <version>0.8.7</version>
-      <executions>
-        <execution>
-          <id>prepare-agent</id>
-          <goals>
-            <goal>prepare-agent</goal>
-          </goals>
-        </execution>
-        <execution>
-          <id>report</id>
-          <goals>
-            <goal>report</goal>
-          </goals>
-          <configuration>
-            <formats>
-              <format>XML</format>
-            </formats>
-          </configuration>
-        </execution>
-      </executions>
-    </plugin>     
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.4.1</version>
+                <configuration>
+                    <source>11</source>
+                    <additionalOptions>
+                        <additionalOption>-Xdoclint:none</additionalOption>
+                    </additionalOptions>
+                    <excludePackageNames>
+                        recommendation_system.edu.duke
+                    </excludePackageNames>
+                    <sourcepath>${basedir}/src/main/java</sourcepath>
+                </configuration>
+            </plugin>    
         </plugins>
     </build>
 
